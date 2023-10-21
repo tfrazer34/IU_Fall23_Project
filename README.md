@@ -1,4 +1,14 @@
-# IU_Fall23_Project
-Repository for IU Fall 2023 Project
+# DSCI-D590-Group-3
+<br>
 
-We can add to this readme to discuss what our project is about
+## This Repo contains the Final Project Assignment for DSCI-D590 Group 3
+
+Group 3 Contributors:
+- Alexis Perez
+- Tyler Frazer
+- Kamil Kosidlak
+
+<br>
+
+## Idea:
+Create a Weather Application to predict weather conditions such as rain, sun, drizzle, snow, or fog
