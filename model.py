@@ -7,7 +7,7 @@ import pickle
 
 # Load csv file
 # df = pd.read_csv("Iris.csv")
-weather_df = pd.read_csv('seattle-weather.csv')
+weather_df = pd.read_csv('data/seattle-weather.csv')
 
 #Select dependant and independant variables
 

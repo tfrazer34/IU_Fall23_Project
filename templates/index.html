@@ -34,9 +34,32 @@
                 Weather Prediction
             </div>
             <div class="card-body">
-                <!-- Insert form or content here -->
-                <p class="card-text">Add input boxes here</p>
-                <!-- You can add form elements here as needed -->
+
+                <form action="{{ url_for('predict') }}" method="post">
+                    <div>
+                        <label for="precipitation">Precipitation <input type="range" name="precipitation" id="precipitation" min="0" max="60" value="25" oninput="rangeValue.innerText = this.value"><p id="rangeValue">25</p>
+                    </div>
+
+                    <div>
+                        <label for="temp_max">Temp Max <input type="range" name="temp_max" id="temp_max" min="-10" max="60" value="25" oninput="rangeValue_1.innerText = this.value"><p id="rangeValue_1">25</p>
+                    </div>
+
+                    <div>
+                        <label for="temp_min">Temp Min <input type="range" name="temp_min" id="temp_min" min="-10" max="60" value="25" oninput="rangeValue_2.innerText = this.value"><p id="rangeValue_2">25</p>
+                    </div>
+
+                    <div>
+                        <label for="wind">Wind<input type="range" name="wind" id="wind" min="-0" max="10" value="5" oninput="rangeValue_3.innerText = this.value"><p id="rangeValue_3">25</p>
+                    </div>
+        
+                    <button type="submit" class="btn btn-primary btn-block btn-large">
+                        Predict
+                    </button>
+                    <br/>
+                    <br/>
+        
+                    {{ prediction }}
+                </form>
             </div>
         </div>
     </div>
