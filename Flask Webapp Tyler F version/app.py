@@ -28,7 +28,7 @@ def predict():
 
     return render_template("index.html", prediction = predictions)
 
-
+#test
 
 
 if __name__ == '__main__':
