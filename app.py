@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt 
 from io import BytesIO 
 import base64 
@@ -22,8 +23,8 @@ model = pickle.load(open("model.pkl", "rb"))
 def home():
     return render_template("index.html", prediction=None)
 
+weather_df = pd.read_csv('data/seattle-weather.csv')
 @app.route('/visuals') 
-
 def visuals(): 
     # Assuming 'date' is in datetime format, if not, convert it using pd.to_datetime() 
     last_week_data = weather_df.tail(7) 
