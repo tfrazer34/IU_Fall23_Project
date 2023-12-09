@@ -1,0 +1,30 @@
+<!-- visuals.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head style="background-color: #C8C8C8;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #C8C8C8;">
+    <h1 style = "font-size: 24px; text-align: center;">Weather Visualizations</h1>
+
+    <!-- Embed the plot -->
+    <div class="container mt-5" style="max-width: 800px; background-color: #909090; padding: 20px; text-align: center;">
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Last 7 Days Weather Plot" class="img-fluid" style="max-width: 100%; height: auto;">
+    </div>
+
+    <!-- Link back to home page -->
+    <a href="{{ url_for('home') }}" class="btn btn-primary mt-3">Back to Home</a>
+
+    <!-- Bootstrap Bundle with Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-7HYR5PBMoTdGQF8B7L0jxVc6c8JFqS3L8jBoBwC5wUOJj+42ZXd0L4L7Tl/5hw06"
+        crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
