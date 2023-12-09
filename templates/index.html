@@ -57,35 +57,36 @@
         <div class="container mt-5" style="max-width: 400px; background-color: #909090; ">
             <div class="card" style = "background-color: #909090; ">
                 <div class="card-header">
-                    Weather Prediction
+                    <strong style = "text-align: center; display: block;">Weather Prediction</strong>
                 </div>
                 <div class="card-body">
 
                     <form action="{{ url_for('predict') }}" method="post">
                         <div>
-                            <label for="precipitation">Precipitation <input type="range" name="precipitation" id="precipitation" min="0" max="60" value="25" step=".1" oninput="rangeValue.innerText = this.value"><p id="rangeValue">25.1</p>
+                            <label for="precipitation">Precipitation <input type="range" name="precipitation" id="precipitation" min="0" max="60" value="{{ request.form['precipitation'] if request.form['precipitation'] else '25'}}" step=".1" oninput="rangeValue.innerText = this.value"><p id="rangeValue">{{ request.form['precipitation'] if request.form['precipitation'] else '25'}}</p>
                         </div>
 
                         <div>
-                            <label for="temp_max">Temp Max <input type="range" name="temp_max" id="temp_max" min="-10" max="60" value="25" step=".1" oninput="rangeValue_1.innerText = this.value"><p id="rangeValue_1">25.1</p>
+                            <label for="temp_max">Temp Max <input type="range" name="temp_max" id="temp_max" min="-10" max="60" value="{{ request.form['temp_max'] if request.form['temp_max'] else '25'}}" step=".1" oninput="rangeValue_1.innerText = this.value"><p id="rangeValue_1">{{ request.form['temp_max'] if request.form['temp_max'] else '25'}}</p>
                         </div>
 
                         <div>
-                            <label for="temp_min">Temp Min <input type="range" name="temp_min" id="temp_min" min="-10" max="60" value="25" step=".1" oninput="rangeValue_2.innerText = this.value"><p id="rangeValue_2">25.1</p>
+                            <label for="temp_min">Temp Min <input type="range" name="temp_min" id="temp_min" min="-10" max="60" value="{{ request.form['temp_min'] if request.form['temp_min'] else '25'}}" step=".1" oninput="rangeValue_2.innerText = this.value"><p id="rangeValue_2">{{ request.form['temp_min'] if request.form['temp_min'] else '25'}}</p>
                         </div>
 
                         <div>
-                            <label for="wind">Wind<input type="range" name="wind" id="wind" min="-0" max="10" value="5" step=".1" oninput="rangeValue_3.innerText = this.value"><p id="rangeValue_3">25.1</p>
+                            <label for="wind">Wind<input type="range" name="wind" id="wind" min="-0" max="10" value="{{ request.form['wind'] if request.form['wind'] else '5'}}" step=".1" oninput="rangeValue_3.innerText = this.value"><p id="rangeValue_3">{{ request.form['wind'] if request.form['wind'] else '5'}}</p>
                         </div>
-            
-                        <button type="submit" class="btn btn-primary btn-block btn-large">
+
+                        <div class = "text-center">           
+                            <button type="submit" class="btn btn-primary btn-block btn-large">
                             Predict
-                        </button>
+                            </button></div>
                         <br/>
                         <br/>
             
                         <div class="prediction-text">
-                        <h2>Predicted Weather is: <span style="color:red;">{{ prediction[0] }}</span></h2>
+                        <h2><strong>Predicted Weather: </strong> <span style="color:red;">{{ prediction[0] }}</span></h2>
                         </div>
 
                         <!-- Weather video-->
